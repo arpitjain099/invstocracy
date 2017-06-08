@@ -1,0 +1,591 @@
+include header
+doctype html
+html
+  style.
+    #progress {
+    border: 1px solid black;
+    position: relative;
+    padding: 3px;
+    }
+    #percent {
+    position: absolute;
+    left: 50%;
+    }
+    #bar {
+    height: 20px;
+    background-color: green;
+    width: 42%;
+    }
+  |    
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+  #showinterestmodal.modal.fade(role="dialog")
+    .modal-dialog
+      // Modal content
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal") ×
+          |         
+          h4.modal-title Thank you for your interest in ABC Private Limited.
+        |       
+        .modal-body
+          | You have requested access to Confidential Documents. The company will contact you if your request gets approved. In order to help prioritize your access request, please enter the maximum amount you are likely to invest. 
+          br
+          b This is a non-binding indication of interest.
+          br
+          br
+          .form-group.c2.required(data-cid="c2")
+            label.control-label(for="c2") Minimum Commitment Amount
+            .input-group
+              span.input-group-addon.left
+                i.glyphicon.glyphicon-tower
+              input#c2.form-control(type="email", name="c2", value="", data-rule-email="true", data-rule-required="true")
+            .form-group.c150(data-cid="c150")
+              label.control-label(for="c150") LinkedIn URL
+              .input-group
+                span.input-group-addon.left
+                  i.fa.fa-linkedin
+                input#c150.form-control(type="text", name="c150", value="", placeholder="Please leave this empty if you provided your LinkedIn URL at the time of Signup.")
+            .form-group.c28.required(data-cid="c28")
+              label.control-label(for="c28") Additional Comments (Optional)
+              .input-group
+                span.input-group-addon.left
+                  i.glyphicon.glyphicon-comment
+                input#c28.form-control(type="textarea", name="c28", value="", data-rule-required="true")
+            #showinterestresponse
+            |   
+            center
+              button#submitbuttonid.btn.btn-primary.btn-lg(style="z-index: 1;")
+                | Submit
+            |         
+            img(src="investor_investment_diagram.svg", width="100%", alt="Investment pitch process")
+  script(type="text/javascript").
+    function showinterest(){
+    $("#showinterestmodal").modal();
+    }
+  section#header1-73.mbr-box.mbr-section.mbr-section--relative.mbr-section--fixed-size.mbr-section--full-height.mbr-section--bg-adapted.mbr-parallax-background.mbr-after-navbar
+    .mbr-box__magnet.mbr-box__magnet--md-padding.mbr-box__magnet--center-left
+      .mbr-overlay(style="opacity: 0.6; background-color: rgb(76, 105, 114);")
+      |         
+      .mbr-box__container.mbr-section__container.container
+        .mbr-box.mbr-box--stretched
+          .mbr-box__magnet.mbr-box__magnet--center-left
+            link(rel="stylesheet", href="assets/bootstrap/css/bootstrap.vertical-tabs.min.css")
+            |                 
+            .row
+              .col-md-6
+                .mbr-hero.animated.fadeInUp
+                  h1.mbr-hero__text Company name
+                  |                         
+                  p.mbr-hero__subtext
+                    | Tagline 
+                    br
+                  |                         
+                  p.mbr-hero__subtext
+                    | Explain your business here as briefly as possible! 
+                    br
+                  |                          
+                  p.mbr-hero__subtext
+                    | Put your key offering here. Again, put your key offering here! 
+                    br
+                |                     
+                .mbr-buttons.btn-inverse.mbr-buttons--left
+                  a.mbr-buttons__btn.btn.btn-lg.animated.fadeInUp.delay.btn-warning(onclick="showinterest()") Interested
+                  |  
+                  a.mbr-buttons__btn.btn.btn-lg.btn-default.animated.fadeInUp.delay(onclick="bookmarkforlater()") Bookmark for later
+      |         
+      .mbr-arrow.mbr-arrow--floating.text-center
+        .mbr-section__container.container
+          a.mbr-arrow__link(href="#features1-75")
+            i.glyphicon.glyphicon-menu-down
+  section#features1-75.content-2.col-4(style="background-color: rgb(255, 255, 255);")
+    .container
+      .row
+        div
+          .thumbnail
+            .image
+              img.undefined(src="assets/images/fmv.png")
+            |                     
+            .caption
+              div
+                h3 Deal expires in X days
+                |                              
+                |                              
+                #progress
+                  .col-md-12
+                    span#percent 42%
+                  |                             
+                  #bar
+                |                             Company Name is raising Rs. 5,00,000 with a minimum reservation of Rs. 20,000. Numbers displayed include non-binding reservations before investors are verified, signed, or closed.
+        |             
+        div
+          .thumbnail
+            .caption
+              div
+                h3 Name of company
+                br
+                |                              
+                h3 Brief description about what does your company do. 
+        |             
+        div
+          .thumbnail
+            .caption
+              div
+                h3 Tags
+                |                             Virtual Reality, Artifical Reality, Intelligent Systems. 
+                br
+                br
+                |  
+                |                             
+                h3 Location
+                |                             Bangalore, Karnataka, India
+        |             
+        div
+          .thumbnail
+            .caption
+              .mbr-buttons.btn-inverse.mbr-buttons--left
+                a.mbr-buttons__btn.btn.btn-lg.animated.fadeInUp.delay.btn-warning(onclick="showinterest()") Express Interest
+                br
+                |  
+                |                             
+                a.mbr-buttons__btn.btn.btn-lg.animated.fadeInUp.delay.btn-warning(onclick="bookmarkforlater()") Bookmark for later
+  section#header1-76.mbr-box.mbr-section.mbr-section--relative.mbr-section--fixed-size.mbr-section--full-height.mbr-section--bg-adapted.mbr-parallax-background
+    .mbr-box__magnet.mbr-box__magnet--md-padding.mbr-box__magnet--center-left
+      .mbr-overlay(style="opacity: 0.5; background-color: rgb(41, 105, 176);")
+      |         
+      .mbr-box__container.mbr-section__container.container
+        br
+        |                 
+        .col-md-4
+          .table-responsive
+            table.table.table-bordered.table-hover
+              thead
+                tr
+                  th
+                    center Team
+              |                                 
+              tbody
+                tr
+                  td
+                    img.col-md-3(src="assets/images/Apple logo icon - Aluminum.png")
+                    p
+                      | Rockstar 1 
+                      br
+                      | Name
+                      |                                             
+                      br
+                      |  Credentials
+                |                                      
+                tr
+                  td
+                    img.col-md-3(src="assets/images/Apple logo icon - Aluminum.png")
+                    | Rockstar 1 
+                    br
+                    | Name
+                    |                                             
+                    br
+                    |  Credentials
+          |                         
+          .table-responsive
+            table.table.table-bordered.table-hover
+              thead
+                tr
+                  th
+                    center Advisors
+              |                                 
+              tbody
+                tr
+                  td
+                    img.col-md-3(src="assets/images/Apple logo icon - Aluminum.png")
+                    | Rockstar 3 
+                    br
+                    | Name
+                    |                                             
+                    br
+                    |  Credentials
+                |                                      
+                tr
+                  td
+                    img.col-md-3(src="assets/images/Apple logo icon - Aluminum.png")
+                    | Rockstar 4 
+                    br
+                    | Name
+                    |                                             
+                    br
+                    |  Credentials
+          |                         
+          .table-responsive
+            table.table.table-bordered.table-hover
+              thead
+                tr
+                  th
+                    center Recomendations
+              |                                 
+              tbody
+                tr
+                  td
+                    img.col-md-3(src="assets/images/Apple logo icon - Aluminum.png")
+                    | Rockstar 3 
+                    br
+                    | Name
+                    |                                             
+                    br
+                    |  Credentials
+                |                                      
+                tr
+                  td
+                    img.col-md-3(src="assets/images/Apple logo icon - Aluminum.png")
+                    | Rockstar 4 
+                    br
+                    | Name
+                    |                                             
+                    br
+                    |  Credentials
+        |                  
+        .col-md-8
+          .col-md-3
+            // required for floating
+            // Nav tabs
+            ul.nav.nav-tabs.tabs-left
+              li
+                a(href="#pitchvideo", data-toggle="tab") Pitch Video
+              |             
+              li
+                a(href="#presentation", data-toggle="tab") Company Slide Deck
+              |             
+              li
+                a(href="#investmentdetails", data-toggle="tab") Investment Details
+              |             
+              li
+                a(href="#highlights", data-toggle="tab") Highlights
+              |             
+              li
+                a(href="#testimonials", data-toggle="tab") Testimonials
+              |             
+              li
+                a(href="#elevatorpitch", data-toggle="tab") Elevator Pitch
+              |             
+              li
+                a(href="#traction", data-toggle="tab") Traction
+              |             
+              li
+                a(href="#supplementarydata", data-toggle="tab") Supplementary Data
+              |             
+              li
+                a(href="#existing_investors", data-toggle="tab") Investors
+              |             
+              li
+                a(href="#documents", data-toggle="tab") Documents
+              |             
+              li
+                a(href="#market", data-toggle="tab") Market
+              |             
+              li
+                a(href="#competition", data-toggle="tab") Competition
+              |             
+              li
+                a(href="#qna", data-toggle="tab") Q & A forum
+              |             
+              li
+                a(href="#kpi", data-toggle="tab") Key Performance Indicators
+          |         
+          .col-md-9
+            // Tab panes
+            .tab-content
+              #pitchvideo.tab-pane.active
+                iframe(width="560", height="315", src="https://www.youtube.com/embed/UmdFkCBg4VY?rel=0", frameborder="0", allowfullscreen="")
+              |             
+              |             
+              #presentation.tab-pane
+                iframe(src="//www.slideshare.net/slideshow/embed_code/key/HlffpWO9MWg5NQ", width="560", height="315", frameborder="0", marginwidth="0", marginheight="0", scrolling="no", style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;", allowfullscreen="")  
+              |             
+              #investmentdetails.tab-pane
+                h2 Raise Details
+                |                 
+                table
+                  tr
+                    td
+                      | Funding Goal
+                    |                         
+                    td
+                      | Rs. 500,000
+                  |                     
+                  tr
+                    td
+                      | Current Reservations
+                    |                         
+                    td
+                      | Rs. 300,500
+                  |                     
+                  tr
+                    td
+                      | Current Converted/In-process Reservations
+                    |                         
+                    td
+                      | Rs. 12,000
+                  |                     
+                  tr
+                    td
+                      | Minimum Reservation
+                    |                         
+                    td
+                      | Rs. 20,000
+                  |                     
+                  tr
+                    td
+                    | Deal Stage 
+                    |                         
+                    td
+                    | Seed
+                  |                     
+                  tr
+                    td
+                      | Interest (% per year)
+                    |                         
+                    td
+                      | 2.00%
+                  |                     
+                  tr
+                    td
+                      | Term Length
+                    |                         
+                    td
+                      | 12 months
+                  |                     
+                  tr
+                    td
+                      | Valuation Cap
+                    |                         
+                    td
+                      | Rs. 8,500,000
+                  |                     
+                  tr
+                    td
+                      | Open Date
+                    |                         
+                    td
+                      | 09/01/2016
+                  |                      
+                  tr
+                    td
+                      | Closing Date
+                    |                         
+                    td
+                      | 11/30/2016
+              |                     
+              #testimonials.tab-pane
+                h2 Testimonials
+                |                   
+                .col-md-6
+                  .thumbnail.flower(data-category="green large medium africa")
+                    img(src="http://placehold.it/500x250/EEE")
+                    |               
+                    .caption
+                      h4 User 1
+                      |                 
+                      p I love Company name because of its awesome service
+                      |                 
+                      p.btn.btn-info.btn-xs Early investor in Uber
+                |         
+                .col-md-6
+                  .thumbnail.flower(data-category="green large medium africa")
+                    img(src="http://placehold.it/500x250/EEE")
+                    |               
+                    .caption
+                      h4 500 Startups
+                      |                 
+                      p One of my best incubatee company! The leadership team is very professional!
+                      |                 
+                      p.btn.btn-info.btn-xs Early stage incubator
+              |             
+              #highlights.tab-pane
+                h2 Key highlights
+                |                 - 42% MoM Average Revenue Growth 
+                br
+                br
+                | - Top 3 investors: Mohandas Pai, Narayana Murthy, 500 Startups
+                br
+                br
+                | - Dropped customer acquisition cost from Rs. 100.1 (May) to Rs. 24.1 (August)
+              |             
+              #elevatorpitch.tab-pane
+                h2 Elevator Pitch
+                |                Order any ethnic cuisine and have it delivered in less than 15 minutes.
+              |             
+              #traction.tab-pane
+                h2 Traction
+                |                 
+                i.glyphicon.glyphicon-cup
+                |  August annualized revenue is 705,000, SEPTEMBER, 2015
+                br
+                |                 
+                i.glyphicon.glyphicon-cup
+                |  August annualized revenue is 405,000, SEPTEMBER, 2014
+                br
+                |                 
+                i.glyphicon.glyphicon-cup
+                |  August annualized revenue is 205,000, SEPTEMBER, 2013
+                br
+                |                 
+                i.glyphicon.glyphicon-cup
+                |  August annualized revenue is 105,000, SEPTEMBER, 2012
+                br
+              |             
+              #supplementarydata.tab-pane
+                h2 Supplementary Data
+                |                 
+                iframe(width="560", height="315", src="https://www.youtube.com/embed/Pb8LT7uyzrc?rel=0", frameborder="0", allowfullscreen="")
+                |                 
+                iframe(width="560", height="315", src="https://www.youtube.com/embed/28utrRprjzw?rel=0", frameborder="0", allowfullscreen="")
+              |             
+              #existing_investors.tab-pane
+                h2 Existing Investors
+                |                 
+                .col-md-6
+                  .thumbnail.flower(data-category="green large medium africa")
+                    img(src="http://placehold.it/500x250/EEE")
+                    |               
+                    .caption
+                      h4 Investor 1
+                      |                 
+                      p Investor 1 had a very successful exit from this startup and also that startup.
+                |         
+                .col-md-6
+                  .thumbnail.flower(data-category="green yellow large antarctica")
+                    img(src="http://placehold.it/500x250/EEE")
+                    |               
+                    .caption
+                      h4 Investor 2
+                      |                 
+                      p Investor 2 has invested in this company, that company and also that company.
+              |             
+              #documents.tab-pane
+                h2 Financial Documents
+                |                 Click 
+                a(onclick="showinterest()") here
+                |  to express your interest in Company Name.
+              |             
+              #market.tab-pane
+                h2 Market
+                |                 The market for Company name is new and untapped. Company name offers a unique value proposition where they have the first movers advantage.
+              |             
+              #competition.tab-pane
+                h2 Competitors
+                |                    
+                .col-md-6
+                  .thumbnail.flower(data-category="green large medium africa")
+                    img(src="http://placehold.it/500x250/EEE")
+                    |               
+                    .caption
+                      h4 Company 1
+                      |                 
+                      p Company 1 is a very big global player with a possibility to enter Indian market.
+                      |                
+                      a.btn.btn-info.btn-xs(href="#", role="button") Website
+                |         
+                .col-md-6
+                  .thumbnail.flower(data-category="green yellow large antarctica")
+                    img(src="http://placehold.it/500x250/EEE")
+                    |               
+                    .caption
+                      h4 Company 2
+                      |                 
+                      p Company 2 (backed by Company 3) might enter this market in the next 2 years.
+                      |                
+                      a.btn.btn-info.btn-xs(href="#", role="button") Website
+              |             
+              #qna.tab-pane
+                h2 Questions and Answers Forum
+                |                Have a question of your own? Drop in a mail to 
+                a(href="mailto:reachout@fundmyventure.co") reachout@fundmyventure.co
+                |  with Company Name as subject line and we will ask the company founders to respond to the question.
+                |                
+                br
+                br
+                |                 Q1. What are your plans for using the funds raised? 
+                br
+                |                 A1. We plan to use the money to hire employees (2 programmers, 3 private equity analysts, set up office space) 
+                br
+                br
+                |                 Q2. Do you have plans to raise further rounds?  
+                br
+                |                 A2. Lets see! 
+                br
+              |             
+              #kpi.tab-pane
+                h2 Key Performance Indicators for Company Name
+                |                 Traction
+                br
+                |                 Number of X units consumed (daily)
+                br
+                |                 Number of Y units consumed (daily)
+                br
+                |                 Number of Z units consumed (daily)
+                br
+                |                 Number of A units produced (daily)
+                br
+                |                 Number of B units produced (daily)
+                br
+                |                 Number of C units produced (daily)
+  section#form1-89.mbr-section.mbr-section--relative.mbr-section--fixed-size(style="background-color: rgb(0, 168, 133);")
+    center
+      h1 Announcements
+    |  
+    .mbr-section__container.mbr-section__container.container
+      .row
+        .col-md-12
+          .row
+            .col-md-8.col-md-offset-2(data-form-type="formoid")
+              center
+                | 03-03-2016: 
+                a(href="#") Hangout
+                |  with Mr. ABC, CEO, Company Name
+              br
+              |                        
+              center
+                | 01-03-2016: 
+                a(href="#") Hangout
+                |  with Mr. XYZ, Principal Advisor, Company Name
+              br
+  section#form1-89.mbr-section.mbr-section--relative.mbr-section--fixed-size(style="background-color: rgb(255, 255, 255);")
+    .mbr-section__container.mbr-section__container--std-padding.container
+      .row
+        .col-md-12
+          .row
+            .col-md-8.col-md-offset-2(data-form-type="formoid")
+              .mbr-header.mbr-header--center.mbr-header--std-padding
+                h2.mbr-header__text Disclaimer
+              |                         Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. 
+              br
+              br
+              | Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. Disclaimer content. 
+              br
+              br
+              | Disclaimer content. Disclaimer content. Disclaimer content.
+  script(type="text/javascript").
+    function bookmarkforlater(){
+    $.post("http://fundmyventure.co/server/bookmarkforlater.php", {
+    username:localStorage.getItem("username"),
+    companyname:"Company1"
+    })
+    .done(function( data ) {
+    //console.log(data);
+    alert(data);
+    });
+    }
+    $("#submitbuttonid").click(function(){
+    if(document.getElementById("c2").value=="")
+    alert("Please enter the minimum commitment amount.");
+    $.post("http://fundmyventure.co/server/showinterest.php", {
+    username:localStorage.getItem("username"),
+    value:document.getElementById("c2").value,
+    comments:document.getElementById("c28").value,
+    linkedin:document.getElementById("c150").value,
+    companyname:"Company1"
+    })
+    .done(function( data ) {
+    console.log(data);
+    document.getElementById("showinterestresponse").innerHTML="<center>".concat(data).concat("</center>");
+    document.getElementById("showinterestresponse").style.color = 'green';
+    });
+    });
+include footer

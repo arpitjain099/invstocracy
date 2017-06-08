@@ -1,0 +1,139 @@
+include header
+html
+  head
+    script(type='text/javascript').
+      function a(){
+      if(document.getElementById("c150").value=="")
+      alert("Campaign description field cannot be left empty.");
+      if(!localStorage.getItem("username"))
+      alert("Login before submitting campaign request.");
+      else{
+      $.post("http://fundmyventure.co/server/submitcampaign.php", {
+      username:localStorage.getItem("username"),
+      campaigndescription:document.getElementById("c150").value,
+      additioncomments:document.getElementById("c28").value
+      })
+      .done(function( data ) {
+      console.log(data);
+      document.getElementById("showcampaignresponse").innerHTML="<center>".concat(data).concat("</center>");
+      document.getElementById("showcampaignresponse").style.color = 'green';
+      });
+      }
+      }
+  body
+    #startcampaignmodal.modal.fade(role='dialog')
+      .modal-dialog
+        // Modal content
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal') &times;
+            |         
+            h4.modal-title
+              center Submit campaign details
+          |       
+          .modal-body
+            | Campaigns are general business ideas which are in idea stage. Campaigns seek support from local patrons who believe in the vision of the campaign&apos;s promoter. An example campaign can be to set up a hospital/school/food chain in a city.
+            br
+            br
+            | Alternatively, you can drop us a mail at 
+            a(href='mailto:reachout@fundmyventure.co') reachout@fundmyventure.co
+            |  with your campaign details.
+            .form-group.c150(data-cid='c150')
+              label.control-label(for='c150') Brief description
+              .input-group
+                span.input-group-addon.left
+                  i.glyphicon.glyphicon-heart
+                input#c150.form-control(type='text', name='c150', value='', placeholder='Provide a brief description of your campaign - what its about, roadmap, current stage, etc')
+            .form-group.c28.required(data-cid='c28')
+              label.control-label(for='c28') Additional Comments (Optional)
+              .input-group
+                span.input-group-addon.left
+                  i.glyphicon.glyphicon-comment
+                input#c28.form-control(type='textarea', name='c28', value='', data-rule-required='true')
+            #showcampaignresponse
+            |   
+            center
+              button#campaignsubmitbutton.btn.btn-primary.btn-lg(style='z-index: 1;', onclick='a()')
+                | Submit
+    |   
+    link(rel='stylesheet', href='css/font-awesome.min.css')
+    section.content-2.col-4(style='background-color: rgb(255, 255, 255);')
+      .container
+        center
+          h2
+            | Investors, now you can 
+            a(data-toggle='modal', href='#startcampaignmodal') start
+            |  a fundraise for your business idea too!
+        |        
+        u
+          h3 What is it about?
+        |    FundMyVenture&apos;s vision is to enable people realize their dreams with the support of people around them. Start a campaign, if you feel that you have a business idea which has the potential to be raised by local community around you.
+        |        
+        br
+        br
+        |        
+        u
+          h3 Examples
+        |        
+        .row
+          .col-md-4
+            img(src='assets/images/doctor.png', width='100%')
+          .col-md-8
+            | Praveen is a MBBS, MS opthalmology from AIIMS, New Delhi. He wants to set up a specialty eye hospital on the outskirts of his hometown Agra along with two of his medico friends. The total cost involved (along with the machines) is about INR 2 crore. He also seeks support from influential people in Agra so that he can focus on running the hospital. Praveen comes to FundMyVenture and creates his campaign giving expense breakup, projected cash flow cycles, time for the investment to pay off, and profit margins. People around Agra who understand the value behind Praveen&apos;s venture invest both time and money to help set up the hospital.
+          |           
+          |           
+          .col-md-4
+            img(src='assets/images/graduate.png', width='100%')
+          .col-md-8
+            | Raj is a teacher from Kendriya Vidyalaya School, Lucknow. He has been teaching students for the past 25 years and has good understanding about running a school, curriculum and other aspects. Raj wants to set up a school for girls around his locality in Lucknow. He seeks INR 50L as starting capital along with 5 people as support staff. Raj puts his vision about the school on FundMyVenture and is able to raise 39L. The amount, though, is less than what Raj originally expected to raise but is sufficient for him  to begin.
+        |  
+        |        
+        br
+        br
+        |        
+        u
+          h3 How is it different from fundraising by startups?
+        |        Campaigns are different from startup fundraise as campaigns are focused on connecting businesses which are currently in idea stage, and require necessary local funds and support.  FundMyVenture is different from platforms like 
+        a(href='http://kickstarter.com', target='_blank') Kickstarter
+        |  as we focus on solid business ideas where investors can contribute effort, mentorship as well as financial assistance to help you set up the business.
+        |        
+        br
+        br
+    style(type='text/css').
+      .scroll-top {
+      border-radius:6px;
+      position:fixed;
+      bottom:4%;
+      right:4%;
+      left:4%;
+      z-index:100;
+      background: #ffcc33;
+      font-size:24px;
+      }
+      .scroll-top a:link,.scroll-top a:visited {
+      color:#222;
+      }
+      #button {
+      line-height: 12px;
+      width: 18px;
+      font-size: 8pt;
+      font-family: tahoma;
+      margin-top: 1px;
+      margin-right: 2px;
+      position:absolute;
+      top:0;
+      right:0;
+      }
+    script(type='text/javascript').
+      function f(){
+      document.getElementById("a").style.display="none";
+      }
+    center
+      #a.nav.pull-right.scroll-top
+        span.glyphicon.glyphicon-heart
+        |  Have a startup of your own? 
+        a(href='venture_signup.php') Signup for free
+        |  to begin fundraise for your business.
+        |         &nbsp;&nbsp;&nbsp;
+        input#button(type='button', onclick='f()', value='X')
+include footer

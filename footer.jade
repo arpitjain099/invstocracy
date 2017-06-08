@@ -1,0 +1,96 @@
+html
+  body
+    link(rel='stylesheet', href='fonts/font-awesome-4.6.3/css/font-awesome.min.css')
+    
+    section#contact.mbr-section.mbr-section--relative.mbr-section--fixed-size(style='background-color: rgb(239, 239, 239);')
+      .mbr-section__container.container
+        .mbr-contacts.mbr-contacts--wysiwyg.row
+          .col-sm-6
+            p.mbr-contacts__text
+              strong Reach out
+              br
+              | E-mail - 
+              a(href='mailto:reachout@fundmyventure.co') reachout@fundmyventure.co
+              br
+              | Phone - (+91) 7829369467
+              // 080-95994233
+            br
+            br
+            a(href='https://angel.co/fundmyventure', target='_blank')
+              i.fa.fa-angellist.fa-2x
+            |         &nbsp&nbsp&nbsp&nbsp
+            a(href='https://medium.com/fund-my-venture', target='_blank')
+              i.fa.fa-medium.fa-2x
+            | &nbsp&nbsp&nbsp&nbsp
+            a(href='https://www.facebook.com/FundMyVenture-1737471556494237/', target='_blank')
+              i.fa.fa-facebook.fa-2x
+            | &nbsp&nbsp&nbsp&nbsp
+            a(href='https://twitter.com/fundmyventurehq', target='_blank')
+              i.fa.fa-twitter.fa-2x
+            | &nbsp&nbsp&nbsp&nbsp
+            a(href='https://www.linkedin.com/company/fundmyventure-technologies', target='_blank')
+              i.fa.fa-linkedin.fa-2x
+          .col-sm-6
+            .row
+              .col-sm-5.col-sm-offset-1
+              .col-sm-6
+                p.mbr-contacts__text
+                  strong Join us
+                ul.mbr-contacts__list
+                  a(href='https://medium.com/fund-my-venture', target='_blank')
+                    li Learn
+                  a(href='glossary.php')
+                    li Glossary
+                  a(href='faq.php')
+                    li Frequently Asked Questions
+                  a(href='https://angel.co/fundmyventure/jobs/', target='_blank')
+                    li Join us
+                  a(href='https://medium.com/fund-my-venture', target='_blank')
+                    li Blog
+        center
+          p.mbr-contacts__text
+            | Made with 
+            span.glyphicon.glyphicon-heart-empty
+            |  in Bangalore!
+    #sleepmodal.modal.fade(role='dialog')
+      .modal-dialog
+        // Modal content
+        .modal-content
+          .modal-body
+            center
+              .image
+                img.undefined(width='10%', src='assets/images/sleep.png')
+              h2 Wake up!
+            p.lead
+              | You've been idle for 
+              span.badge-idle-popup-idleTime 3 minutes
+              | . Click anywhere to dismiss.
+    script(type='text/javascript', src='vanilla.idle.min.js')
+    script(type='text/javascript').
+      idle({
+      onIdle: function(){
+      $('#sleepmodal').modal('toggle');
+      },
+      onActive: function(){
+      },
+      onHide: function(){
+      },
+      onShow: function(){
+      // Add a slight pause so you can see the change
+      setTimeout(function(){
+      }, 250);
+      },
+      idle: 180000,
+      keepTracking: true
+      }).start();
+    script(src='assets/jquery/jquery.min.js')
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    script(src='https://maps.googleapis.com/maps/api/js')
+    script(src='assets/smooth-scroll/SmoothScroll.js')
+    script(src='assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js')
+    script(src='assets/jarallax/jarallax.js')
+    script(src='assets/masonry/masonry.pkgd.min.js')
+    script(src='assets/imagesloaded/imagesloaded.pkgd.min.js')
+    script(src='assets/social-likes/social-likes.js')
+    script(src='assets/fundmyventure/js/script.js')
+    script(src='assets/fundmyventure-gallery/script.js')

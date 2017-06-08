@@ -1,0 +1,176 @@
+include header
+html
+  head
+    script(src='assets/bootstrap/js/bootstrap.min.js')
+    |   
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    |   
+    script(src='assets/jquery/jquery.min.js')
+    |   
+    script(src='assets/bootstrap/css/bootstrap.min.js')
+  body
+    section#header1-73.mbr-box.mbr-section.mbr-section--relative.mbr-section--fixed-size.mbr-section--full-height.mbr-section--bg-adapted.mbr-parallax-background.mbr-after-navbar
+      .mbr-box__magnet--sm-padding.mbr-box__magnet--center-left
+        style(type='text/css').
+          body { font-family:'Arial'; color:#646464; }
+          .continents-wrap { float:left; width:20%; margin:0 5% 0 0; padding:0; }
+          .flowers div { position:relative; }
+        script(type='text/javascript').
+          //<![CDATA[
+          $(function(){
+          $('.flowers-wrap, .continents-wrap').delegate('input[type=checkbox]', 'change', function() {
+          var $lis = $('.flowers > div'),
+          $checked = $('input:checked');
+          if ($checked.length) {
+          var selector = '';
+          $($checked).each(function(index, element){
+          if(selector === '') {
+          selector += "[data-category~='" + element.id + "']";
+          } else {
+          selector += ",[data-category~='" + element.id + "']";
+          }
+          });
+          $lis.hide();
+          console.log(selector);
+          $('.flowers > div').hide().filter(selector).show();
+          } else {
+          $lis.show();
+          }
+          });
+          });//]]>
+        .container
+          .row
+            .flowers-wrap
+              .col-xs-18.col-sm-6.col-md-3
+                h3(style='font-size:14px; font-weight:normal;') Type &#x25BC;
+                |                 
+                |                      
+                form
+                  label(style='font-size:12px;')
+                    input#individualinvestor(type='checkbox')
+                    |  Individual Investor
+                  br
+                  |                     
+                  label(style='font-size:12px;')
+                    input#newangel(type='checkbox')
+                    | New Angel investor
+                  br
+                  |                     
+                  label(style='font-size:12px;')
+                    input#seasonedangelinvestor(type='checkbox')
+                    |  New Angel investor
+                    new(angel='', investor='', label='')
+                      br
+                      |                   
+                      |                     
+                      label(style='font-size:12px;')
+                        input#venturefund(type='checkbox')
+                        |  Venture fund
+                      br
+                      |                    
+                      |                 
+                      |    
+                      h3(style='font-size:14px; font-weight:normal;') Location &#x25BC;
+                      |                 
+                      |                      
+                      form
+                        label(style='font-size:12px;')
+                          input#ncr(type='checkbox')
+                          |  NCR
+                        br
+                        |                     
+                        label(style='font-size:12px;')
+                          input#bangalore(type='checkbox')
+                          | Bangalore
+                        br
+                        |                     
+                        label(style='font-size:12px;')
+                          input#chennai(type='checkbox')
+                          |  Chennai
+                        br
+                        |                   
+                        |                     
+                        label(style='font-size:12px;')
+                          input#mumbai(type='checkbox')
+                          |  Mumbai
+                        br
+                        |                     
+                        label(style='font-size:12px;')
+                          input#indore(type='checkbox')
+                          | Indore
+                        br
+                        |                       
+                        label(style='font-size:12px;')
+                          input#jaipur(type='checkbox')
+                          | Jaipur
+                        br
+                        |                          
+                        label(style='font-size:12px;')
+                          input#trivandrum(type='checkbox')
+                          | Trivandrum
+                        br
+                        |                          
+                        label(style='font-size:12px;')
+                          input#restofindia(type='checkbox')
+                          | Rest of India
+                        |                           
+                        label(style='font-size:12px;')
+                          input#outsideindia(type='checkbox')
+                          | Outside India
+            |            
+            |            
+            .flowers
+              .col-xs-18.col-sm-6.col-md-3
+                .thumbnail.flower(data-category='green large medium africa')
+                  img(src='assets/images/placeholderimage.png')
+                  |               
+                  .caption
+                    h4 XYZ
+                    |                 
+                    p Sector agnostic
+                    |                 
+                    a.btn.btn-default.btn-xs.pull-right(href='#', role='button')
+                    |  
+                    a.btn.btn-info.btn-xs(href='#', role='button') View profile
+            |         
+            .col-xs-18.col-sm-6.col-md-3
+              .thumbnail.flower(data-category='green yellow large antarctica')
+                img(src='assets/images/placeholderimage.png')
+                |               
+                .caption
+                  h4 ABC
+                  |                 
+                  p Sector agnostic
+                  |                 
+                  a.btn.btn-default.btn-xs.pull-right(href='#', role='button')
+                  |  
+                  a.btn.btn-info.btn-xs(href='#', role='button') View profile
+            |         
+            .col-xs-18.col-sm-6.col-md-3
+              .thumbnail.flower(data-category='blue tiny south-america')
+                img(src='assets/images/placeholderimage.png')
+                |               
+                .caption
+                  h4 ABC
+                  |                 
+                  p Sector agnostic
+                  |                 
+                  a.btn.btn-default.btn-xs.pull-right(href='#', role='button')
+                  |  
+                  a.btn.btn-info.btn-xs(href='#', role='button') View profile
+            |          
+            .col-xs-18.col-sm-6.col-md-3
+              .thumbnail.flower(data-category='blue tiny south-america')
+                img(src='assets/images/placeholderimage.png')
+                |               
+                .caption
+                  h4 ABC
+                  |                 
+                  p Sector agnostic
+                  |                 
+                  a.btn.btn-default.btn-xs.pull-right(href='#', role='button')
+                  |  
+                  a.btn.btn-info.btn-xs(href='#', role='button') View profile
+          // /row
+        // /container
+include footer

@@ -1,0 +1,481 @@
+include header
+style(type="text/css").
+  .panel-title:hover {
+  cursor: pointer;
+  }
+  body { font-family:'Arial'; color:#646464; }
+  .continents-wrap { float:left; width:20%; margin:0 5% 0 0; padding:0; }
+  .flowers div { position:relative; }
+|   
+script(src="assets/bootstrap/js/bootstrap.min.js")
+|   
+link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+|   
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+|   
+script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+|   
+section#header1-73.mbr-box.mbr-section.mbr-section--relative.mbr-section--fixed-size.mbr-section--full-height.mbr-section--bg-adapted.mbr-parallax-background.mbr-after-navbar
+  .mbr-box__magnet--sm-padding.mbr-box__magnet--center-left
+    script(type="text/javascript", src="http://code.jquery.com/jquery-1.8.3.js")
+    |   
+    |   
+    |   
+    |   
+    |     
+    link(rel="stylesheet", type="text/css", href="http://jsfiddle.net/css/result-light.css")
+    |   
+    |   
+    script(type="text/javascript").
+      //<![CDATA[
+      $(function(){
+      $('.flowers-wrap, .continents-wrap').delegate('input[type=checkbox]', 'change', function() {
+      var $lis = $('.flowers > div'),
+      $checked = $('input:checked');
+      if ($checked.length) {
+      var selector = '';
+      $($checked).each(function(index, element){
+      if(selector === '') {
+      selector += "[data-category~='" + element.id + "']";
+      } else {
+      selector += ",[data-category~='" + element.id + "']";
+      }
+      });
+      $lis.hide();
+      console.log(selector);
+      $('.flowers > div').hide().filter(selector).show();
+      }
+      else {
+      $lis.show();
+      }
+      });
+      });//]]>
+    .container
+      .row
+        .flowers-wrap
+          .col-xs-18.col-sm-6.col-md-3
+            | Filters
+            #accordion1.panel-group
+              .panel.panel-default
+                .panel-heading
+                  h4.panel-title(data-toggle="collapse", data-target="#1_1")
+                    | Industries ▼
+                |         
+                #1_1.panel-collapse.collapse
+                  .panel-body
+                    form
+                      label(style="font-size:12px;")
+                        input#advertising(type="checkbox")
+                        |  Advertising & Marketing
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#arts(type="checkbox")
+                        |  Arts, Fashion, & Media
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#b2b(type="checkbox")
+                        |  Business to Business
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#cleantech(type="checkbox")
+                        |  Cleantech
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#construction(type="checkbox")
+                        |  Construction & Manufacturing
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#consumerproducts(type="checkbox")
+                        |  Consumer Products
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#energy(type="checkbox")
+                        |  Energy/Transport
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#finance(type="checkbox")
+                        |  Finance
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#fnb(type="checkbox")
+                        |  Food & Beverage
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#healthcare(type="checkbox")
+                        |  Healthcare
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#hospitality(type="checkbox")
+                        |  Hospitality
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#internet(type="checkbox")
+                        |  Internet
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#lifestyle(type="checkbox")
+                        |  Lifestyle
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#mobileandgaming(type="checkbox")
+                        |  Mobile & Gaming
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#realestate(type="checkbox")
+                        |  Real Estate
+                      br
+                      |                     
+                      |                                       
+                      |                       
+                      label(style="font-size:12px;")
+                        input#technology(type="checkbox")
+                        |  Technology
+            |     
+            |     
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title(data-toggle="collapse", data-target="#1_2")
+                  | Stage ▼
+              |         
+              #1_2.panel-collapse.collapse
+                .panel-body
+                  form
+                    label(style="font-size:12px;")
+                      input#preseed(type="checkbox")
+                      |  Pre-seed
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#seed(type="checkbox")
+                      |  Seed
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#preseriesa(type="checkbox")
+                      |  Pre Series A
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#seriesa(type="checkbox")
+                      |  Series A
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#preseriesb(type="checkbox")
+                      |  Pre Series B
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#seriesb(type="checkbox")
+                      |  Series B
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#preseriesc(type="checkbox")
+                      |  Pre Series C
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#seriesc(type="checkbox")
+                      |  Series C
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#preseriesd(type="checkbox")
+                      |  Pre Series D
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#seriesd(type="checkbox")
+                      |  Series D
+                    br
+                    |                       
+                    |                                           
+                    |                         
+                    label(style="font-size:12px;")
+                      input#other(type="checkbox")
+                      |  Other
+                    br
+            |     
+            |     
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title(data-toggle="collapse", data-target="#1_3")
+                  | Size ▼
+              |         
+              #1_3.panel-collapse.collapse
+                .panel-body
+                  form
+                    label(style="font-size:12px;")
+                      input#tiny(type="checkbox")
+                      |  Tiny (0-10 employees)
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#small(type="checkbox")
+                      |  Small (10-50 employees)
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#medium(type="checkbox")
+                      |  Medium(50-200 employees)
+                    br
+                    |                   
+                    |                     
+                    label(style="font-size:12px;")
+                      input#large(type="checkbox")
+                      |  Large (200-500 employees)
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#giant(type="checkbox")
+                      |  Giant (500+ employees)
+            |      
+            |    
+            |      
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title(data-toggle="collapse", data-target="#1_4")
+                  | Location ▼
+              |         
+              #1_4.panel-collapse.collapse
+                .panel-body
+                  form
+                    label(style="font-size:12px;")
+                      input#ncr(type="checkbox")
+                      |  NCR
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#bangalore(type="checkbox")
+                      |  Bangalore
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#chennai(type="checkbox")
+                      |  Chennai
+                    br
+                    |                   
+                    |                     
+                    label(style="font-size:12px;")
+                      input#mumbai(type="checkbox")
+                      |  Mumbai
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#indore(type="checkbox")
+                      |  Indore
+                    br
+                    |                       
+                    label(style="font-size:12px;")
+                      input#jaipur(type="checkbox")
+                      |  Jaipur
+                    br
+                    |                          
+                    label(style="font-size:12px;")
+                      input#trivandrum(type="checkbox")
+                      |  Trivandrum
+                    br
+                    |                          
+                    label(style="font-size:12px;")
+                      input#restofindia(type="checkbox")
+                      |  Rest of India
+            |     
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title(data-toggle="collapse", data-target="#1_5")
+                  | Ask ▼
+              |         
+              #1_5.panel-collapse.collapse
+                .panel-body
+                  form
+                    label(style="font-size:12px;")
+                      input#5l(type="checkbox")
+                      |  0-5 L
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#10l(type="checkbox")
+                      | 5-10L
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#50l(type="checkbox")
+                      |  10-50L
+                    br
+                    |                   
+                    |                     
+                    label(style="font-size:12px;")
+                      input#250l(type="checkbox")
+                      |  50L - 250L
+                    br
+                    |                     
+                    label(style="font-size:12px;")
+                      input#500l(type="checkbox")
+                      | 250L - 500L
+                    br
+                    |                       
+                    label(style="font-size:12px;")
+                      input#600l(type="checkbox")
+                      | 500L +
+          | 			
+          .col-xs-18.col-sm-6.col-md-9
+            .flowers
+              .col-xs-18.col-sm-6.col-md-3.flower(data-id="aloe", data-category="advertising ncr seed")
+                .thumbnail
+                  img(src="http://placehold.it/500x250/EEE")
+                  |               
+                  .caption
+                    h4 Company name
+                    |                 
+                    p
+                      | Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do.
+                    |                
+                    a.btn.btn-info.btn-xs(href="companypage.php", role="button") View offering
+              |         
+              .col-xs-18.col-sm-6.col-md-3.flower(data-id="aloe", data-category="bangalore seriesa tiny cleantech")
+                .thumbnail
+                  img(src="http://placehold.it/500x250/EEE")
+                  |               
+                  .caption
+                    h4 Company name
+                    |                 
+                    p
+                      | Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do.
+                    |                
+                    a.btn.btn-info.btn-xs(href="companypage.php", role="button") View offering
+              |         
+              .col-xs-18.col-sm-6.col-md-3.flower(data-id="aloe", data-category="large seriesb finance")
+                .thumbnail
+                  img(src="http://placehold.it/500x250/EEE")
+                  |               
+                  .caption
+                    h4 Company name
+                    |                 
+                    p
+                      | Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do.
+                    |                  
+                    a.btn.btn-info.btn-xs(href="companypage.php", role="button") View offering
+              |          
+              .col-xs-18.col-sm-6.col-md-3.flower(data-id="aloe", data-category="giant seriesc realestate ")
+                .thumbnail
+                  img(src="http://placehold.it/500x250/EEE")
+                  |               
+                  .caption
+                    h4 Company name
+                    |                 
+                    p
+                      | Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do.
+                    |                  
+                    a.btn.btn-info.btn-xs(href="companypage.php", role="button") View offering
+              | 		
+              | 		
+              .col-xs-18.col-sm-6.col-md-3.flower(data-id="aloe", data-category="giant seriesc realestate ")
+                .thumbnail
+                  img(src="http://placehold.it/500x250/EEE")
+                  |               
+                  .caption
+                    h4 Company name
+                    |                 
+                    p
+                      | Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do.
+                    |                  
+                    a.btn.btn-info.btn-xs(href="companypage.php", role="button") View offering
+              | 		
+              | 		
+              .col-xs-18.col-sm-6.col-md-3.flower(data-id="aloe", data-category="giant seriesc realestate ")
+                .thumbnail
+                  img(src="http://placehold.it/500x250/EEE")
+                  |               
+                  .caption
+                    h4 Company name
+                    |                 
+                    p
+                      | Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do. Brief description of what you do.
+                    |                  
+                    a.btn.btn-info.btn-xs(href="companypage.php", role="button") View offering
+      // /row
+    // /container
+|  
+script(type="text/javascript").
+  $(function () {
+  var active = true;
+  $('#collapse-init').click(function () {
+  if (active) {
+  console.log("sa");
+  active = false;
+  $('.panel-collapse').collapse('show');
+  $('.panel-title').attr('data-toggle', '');
+  $(this).text('Enable accordion behavior');
+  } else {
+  active = true;
+  $('.panel-collapse').collapse('hide');
+  $('.panel-title').attr('data-toggle', 'collapse');
+  $(this).text('Disable accordion behavior');
+  }
+  });
+  $('#accordion1').on('show.bs.collapse', function () {
+  if (active) $('#accordion1 .in').collapse('hide');
+  });
+  });
+include footer

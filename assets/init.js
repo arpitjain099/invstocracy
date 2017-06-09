@@ -42,7 +42,6 @@ return false;
 }); // end submit event
 
 
-function go_to_companies_page()
-{
-window.location = 'companies.php'; // Members Area
+function go_to_companies_page() {
+window.location = 'companies'; // Members Area
 }

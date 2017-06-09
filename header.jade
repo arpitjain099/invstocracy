@@ -31,12 +31,13 @@ head
 script(type='text/javascript').
   function go_to_companies_page()
   {
-  window.location = 'companies.php'; // Members Area
+  window.location = 'companies'; // Members Area
   }
   function logout(){
   localStorage.setItem("username",null);
   localStorage.setItem("usertype",null);
-  localStorage.setItem("timeout",0);window.location.href="index.php";
+  localStorage.setItem("timeout",0);
+  window.location.href="/";
   }
   function login(){
   if(document.getElementById("email").value=="")
@@ -132,7 +133,7 @@ script(type='text/javascript').
           .row
             center
               .col-md-6
-                a(href='investor_signup.php')
+                a(href='investor_signup')
                   center
                     h4.m-b-16
                       | Investor
@@ -140,7 +141,7 @@ script(type='text/javascript').
                     | Includes Angels, VC's, Incubators and Accelerators
               .col-md-1
               .col-md-6
-                a(href='venture_signup.php')
+                a(href='venture_signup')
                   center
                     h4.m-b-16
                       | Startup
@@ -198,7 +199,7 @@ script(type='text/javascript').
           h4.modal-title Investors, you can start a fundraise for your business dream too!
       .modal-body
         | Have a startup of your own? 
-        a(href='venture_signup.php') Signup
+        a(href='venture_signup') Signup
         |  for free to begin fundraise for your company.
         br
         br
@@ -285,10 +286,10 @@ section#menu-20.mbr-navbar.mbr-navbar--freeze.mbr-navbar--relative.mbr-navbar--s
         .mbr-navbar__column.mbr-navbar__column--s.mbr-navbar__brand
           span.mbr-navbar__brand-link.mbr-brand.mbr-brand--inline
             span.mbr-brand__logo
-              a(href='index.php')
+              a(href='/')
                 img.mbr-navbar__brand-img.mbr-brand__img(src='assets/images/fmv.png', alt='FundMyVenture')
             span.mbr-brand__name
-              a.mbr-brand__name.text-white(href='index.php') FundMyVenture
+              a.mbr-brand__name.text-white(href='/') FundMyVenture
         .mbr-navbar__hamburger.mbr-hamburger.text-white
           span.mbr-hamburger__line
         .mbr-navbar__column.mbr-navbar__menu
@@ -296,20 +297,20 @@ section#menu-20.mbr-navbar.mbr-navbar--freeze.mbr-navbar--relative.mbr-navbar--s
             .mbr-navbar__column
               ul#navigation.mbr-navbar__items.mbr-navbar__items--right.mbr-buttons.mbr-buttons--freeze.mbr-buttons--right.btn-decorator.mbr-buttons--active
                 li.mbr-navbar__item
-                  a#investornav.mbr-buttons__link.btn.text-white(href='investors.php') Investors
+                  a#investornav.mbr-buttons__link.btn.text-white(href='investors') Investors
                 li.mbr-navbar__item
-                  a#businessnav.mbr-buttons__link.btn.text-white(href='businesses.php') Businesses
+                  a#businessnav.mbr-buttons__link.btn.text-white(href='businesses') Businesses
                 li.mbr-navbar__item
-                  a#aboutnav.mbr-buttons__link.btn.text-white(href='about.php') About
+                  a#aboutnav.mbr-buttons__link.btn.text-white(href='about') About
                 li.mbr-navbar__item
                   a#learn.mbr-buttons__link.btn.text-white(href='https://medium.com/fund-my-venture', target='_blank') Learn
                 li.mbr-navbar__item
-                  a#browsecompanies.mbr-buttons__link.btn.text-white(href='companies.php', style='display:none') Browse Companies
+                  a#browsecompanies.mbr-buttons__link.btn.text-white(href='companies', style='display:none') Browse Companies
                 li.mbr-navbar__item
-                  a#liveexample.mbr-buttons__link.btn.text-white(href='companypage.php', style='display:none') Live example
+                  a#liveexample.mbr-buttons__link.btn.text-white(href='companypage', style='display:none') Live example
                 // <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#contact" id="contactnav">Contact</a></li>
                 li.mbr-navbar__item
-                  a#getfunded.mbr-buttons__link.btn.text-white(href='start-a-campaign.php', style='display:none') Get Funded
+                  a#getfunded.mbr-buttons__link.btn.text-white(href='start-a-campaign', style='display:none') Get Funded
                 li#dropdownvalues.mbr-navbar__item
                   script(type='text/javascript').
                     if(localStorage.getItem("username") && Date.now() / 1000 < localStorage.getItem("timeout") && localStorage.getItem("usertype")=="investor"){
@@ -317,13 +318,13 @@ section#menu-20.mbr-navbar.mbr-navbar--freeze.mbr-navbar--relative.mbr-navbar--s
                     document.getElementById("aboutnav").style.display="none";
                     document.getElementById("investornav").style.display="none";
                     document.getElementById("businessnav").style.display="none";
-                    document.getElementById("dropdownvalues").innerHTML='<div class="dropdown"> <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Profile <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a href="investor_profile.php">Profile</a></li>  <li><a onclick="logout()">Logout</a></li> </ul> </div>';
+                    document.getElementById("dropdownvalues").innerHTML='<div class="dropdown"> <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Profile <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a href="investor_profile">Profile</a></li>  <li><a onclick="logout()">Logout</a></li> </ul> </div>';
                     }
                     else if(localStorage.getItem("username") && Date.now() / 1000 < localStorage.getItem("timeout") && localStorage.getItem("usertype")=="startup"){
                     document.getElementById("liveexample").style.display="block";
                     document.getElementById("aboutnav").style.display="none";
                     document.getElementById("investornav").style.display="none";
                     document.getElementById("businessnav").style.display="none";
-                    document.getElementById("dropdownvalues").innerHTML='<div class="dropdown"> <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Profile <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a href="venture_profile.php">Profile</a></li> <li><a onclick="logout()">Logout</a></li> </ul> </div>';
+                    document.getElementById("dropdownvalues").innerHTML='<div class="dropdown"> <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Profile <span class="caret"></span></button> <ul class="dropdown-menu"> <li><a href="venture_profile">Profile</a></li> <li><a onclick="logout()">Logout</a></li> </ul> </div>';
                     }
                     else document.getElementById("dropdownvalues").innerHTML='<div class="mbr-buttons  mbr-buttons--left"><center><a class="mbr-buttons__btn btn btn-lg animated fadeInUp delay btn-warning" data-toggle="modal" href="#loginmodal">Login/Signup</a></center>';

@@ -9,5 +9,8 @@
   "dependencies": {
     "express": "*",
     "jade": "*"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.28.0"
   }
 }
